@@ -1,0 +1,5 @@
+#!/Users/sumitsaha/Desktop/DataScience_Udemy/ML_Project_Practice/venv/bin/python3.12
+import sys
+from lib2to3.main import main
+
+sys.exit(main("lib2to3.fixes"))

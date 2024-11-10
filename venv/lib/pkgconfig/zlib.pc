@@ -1,0 +1,13 @@
+prefix=/Users/sumitsaha/Desktop/DataScience_Udemy/ML_Project_Practice/venv
+exec_prefix=/Users/sumitsaha/Desktop/DataScience_Udemy/ML_Project_Practice/venv
+libdir=/Users/sumitsaha/Desktop/DataScience_Udemy/ML_Project_Practice/venv/lib
+sharedlibdir=/Users/sumitsaha/Desktop/DataScience_Udemy/ML_Project_Practice/venv/lib
+includedir=/Users/sumitsaha/Desktop/DataScience_Udemy/ML_Project_Practice/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
