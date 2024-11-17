@@ -27,8 +27,10 @@ if __name__=='__main__':
     doc = data_ingestion()
     dot = datatransformation()
     doc_ingestion_func = doc.data_ingestion_func()
-    x_train_preprocessed, x_test_preprocessed = dot.data_transformation_func()
+    x_train_arr,x_test_arr=dot.data_transformation_func()
     print(doc_ingestion_func)
+    print(x_train_arr.shape, x_test_arr.shape)
+
     
 
 

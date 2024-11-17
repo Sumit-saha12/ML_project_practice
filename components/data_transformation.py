@@ -35,7 +35,7 @@ class datatransformation():
 
             cat_pipeline = Pipeline(
                 steps=[
-                    ('imputer',SimpleImputer(strategy='most_frequency')),
+                    ('imputer',SimpleImputer(strategy='most_frequent')),
                     ('OneHot',OneHotEncoder()),
                     ('Scaling',StandardScaler(with_mean=False))
                 ]
@@ -52,13 +52,20 @@ class datatransformation():
             x_test_preprocessed = preprocessor.transform(x_test)
             logging.info('Scaled data is saved')
 
+            # x_train_arr = np.c_[
+            #     x_train_preprocessed,np.array(x_train)
+            # ]
+            # x_test_arr = np.c_[
+            #     x_test_preprocessed,np.array(x_test)
+            # ]
+
             pickle.dump(preprocessor,open('models/preprocessing.pkl','wb'))
             logging.info('Preprocessing pkl file is saved')
 
-            return (x_train_preprocessed)
+            return x_train_preprocessed,x_test_preprocessed
 
         except Exception as e:
-            CustomException(e,sys)
+            raise CustomException(e,sys)
             
 if __name__=='__main__':
     dot = datatransformation()
